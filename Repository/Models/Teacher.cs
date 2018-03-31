@@ -4,7 +4,7 @@ namespace Repository.Models
 {
     public class Teacher
     {
-        public Guid TeacherId {get; set;}
+        public Guid TeacherId {get; protected set;}
         public Guid SchoolId {get; protected set;}
         public string FirstName {get; protected set;}
         public string LastName {get; protected set;}
@@ -12,6 +12,8 @@ namespace Repository.Models
         public string City {get; protected set;}
         public string Address {get; protected set;}
         public string ZipCode {get; protected set;}
+        public DateTime CreatedAt {get; protected set;}
+        public DateTime ChangedAt {get; protected set;}
 
         public Teacher(Guid teacherId, Guid schoolId, string firstName, string lastName, string languages, string city, string address, string zipCode)
         {
@@ -23,6 +25,12 @@ namespace Repository.Models
             City = city;
             Address = address; 
             ZipCode = zipCode;
+            CreatedAt = DateTime.UtcNow;
+        }
+
+        public Teacher()
+        {
+            
         }
     }
 }

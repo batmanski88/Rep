@@ -1,3 +1,4 @@
+using Api.Infrastructure.Mappers;
 using Autofac;
 using Microsoft.Extensions.Configuration;
 
@@ -15,6 +16,7 @@ namespace Api.Infrastructure.IoC
 
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
             builder.RegisterModule<RepositoryModule>();
         }
     }
