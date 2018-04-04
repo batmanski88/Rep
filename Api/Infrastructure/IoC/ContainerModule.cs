@@ -1,6 +1,7 @@
 using Api.Infrastructure.Mappers;
 using Autofac;
 using Microsoft.Extensions.Configuration;
+using Repository.Repo;
 
 namespace Api.Infrastructure.IoC
 {
@@ -18,6 +19,7 @@ namespace Api.Infrastructure.IoC
         {
             builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
             builder.RegisterModule<RepositoryModule>();
+            builder.RegisterModule<ServiceModule>();
         }
     }
 }

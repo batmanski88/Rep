@@ -11,5 +11,6 @@ namespace Api.Services
          Task<IEnumerable<TeacherViewModel>> GetTeachersAsync();
          Task DeleteTeacherAsync(Guid Id);
          Task EditTeacherAsync(TeacherViewModel model);
+         Task<TeacherViewModel> GetTecherByIdAsync(Guid Id);
     }
 }

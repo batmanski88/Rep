@@ -10,6 +10,7 @@ namespace Api.Infrastructure.Mappers
             => new MapperConfiguration(cfg => 
             {
                 cfg.CreateMap<Teacher, TeacherViewModel>();
+                cfg.CreateMap<TeacherViewModel, Teacher>();
             })
             .CreateMapper();
     }

@@ -13,12 +13,14 @@ namespace Repository.Repo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\ProjectsV12;Initial Catalog=AppDataBase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
-
+        
         public async Task<int> SaveChangesAsync()
         {
             return  await base.SaveChangesAsync();
         }
+
+       
     }
 }

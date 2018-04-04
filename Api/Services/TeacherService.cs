@@ -27,7 +27,8 @@ namespace Api.Services
             }
             else
             {
-                teacher = new Teacher(Guid.NewGuid(), model.SchoolId, model.FirstName, model.LastName, model.Languages, model.City, model.Address, model.ZipCode);
+                teacher = new Teacher(Guid.NewGuid(), model.FirstName, model.LastName, model.Languages, model.City, model.Address, model.ZipCode);
+                await _teacherRepo.AddTeacherAsync(teacher);
             }
         }
 
@@ -38,6 +39,7 @@ namespace Api.Services
 
         public async Task EditTeacherAsync(TeacherViewModel model)
         {
+            var teacherId = (Guid)model.TeacherId;
             var teacher = await _teacherRepo.GetTeacherByIdAsync(model.TeacherId);
             if(teacher == null)
             {
@@ -45,7 +47,12 @@ namespace Api.Services
             }
             else
             {
-                Mapper.Map<Teacher, TeacherViewModel>(teacher);
+                teacher.SetFirsName(model.FirstName);
+                teacher.SetLastName(model.LastName);
+                teacher.SetLanguages(model.Languages);
+                teacher.SetCity(model.City);
+                teacher.SetAddress(model.Address);
+                teacher.SetZipCode(model.ZipCode);
                 await _teacherRepo.UpdateTeacherAsync(teacher);
             }
         }
@@ -54,6 +61,13 @@ namespace Api.Services
         {
             var teachers = await  _teacherRepo.GetTeachersAsync();
             return _mapper.Map<IEnumerable<TeacherViewModel>>(teachers);
+        }
+
+        public async Task<TeacherViewModel> GetTecherByIdAsync(Guid Id)
+        {
+            var teacher = await _teacherRepo.GetTeacherByIdAsync(Id);
+            
+            return _mapper.Map<Teacher, TeacherViewModel>(teacher);
         }
     }
 }

@@ -1,0 +1,37 @@
+
+    <h1 class="panel-header">Nauczyciele</h1>
+
+    <p *ngIf="!teachList"><em>Ładowanie...</em></p>
+
+    <p>
+        <a [routerLink]="['/register-teacher']" class="btn btn-primary">Dodaj nauczyciela</a>
+    </p>
+
+    <table class="table" *ngIf="teachList">
+        <thead>
+            <tr>
+                <th hidden>ID</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Języki</th>
+                <th>Miasto</th>
+                <th>Adres</th>
+                <th>Kod Pocztowy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let teach of teachList">
+                <td hidden>{{teach.teacherId}}</td>
+                <td>{{teach.firstName}}</td>
+                <td>{{teach.lastName}}</td>
+                <td>{{teach.languages}}</td>
+                <td>{{teach.city}}</td>
+                <td>{{teach.address}}</td>
+                <td>{{teach.zipCode}}</td>
+                <td>
+                    <a [routerLink]="['/teacher/edit/' , teach.teacherId]" class="btn btn-warning">Edycja</a>
+                    <a [routerLink]="" (click)="deleteTeacher(teach.teacherId)" class="btn btn-danger">Usun</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>

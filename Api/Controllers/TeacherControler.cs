@@ -8,7 +8,6 @@ using System;
 
 namespace Api.Controllers
 {
-    [Route("api/[controller]")]
     public class TeacherControler : Controller
     {
         private readonly ITeacherService _teacherService;
@@ -17,13 +16,15 @@ namespace Api.Controllers
             _teacherService = teacherService;
         }
 
-        [HttpGet("[action]")]
+        [HttpGet]
+        [Route("api/Teacher/GetTeachersAsync")]
         public async Task<IEnumerable<TeacherViewModel>> GetTeachersAsync()
         {
             return await _teacherService.GetTeachersAsync();
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
+        [Route("api/Teacher/AddTeacherAsync")]
         public async Task<IActionResult> AddTeacherAsync([FromBody]TeacherViewModel model)
         {
             if(ModelState.IsValid)
@@ -34,22 +35,32 @@ namespace Api.Controllers
             return CreatedAtAction("GetTeachersAsync", new {id = model.TeacherId});
         }
 
-        [HttpPut("[action]")]
+        [HttpPut]
+        [Route("api/Teacher/EditTeacherAsync")]
         public async Task<IActionResult> EditTeacherAsync([FromBody]TeacherViewModel model)
         {
             if(ModelState.IsValid)
             {
-                await _teacherService.EditTeacherAsync(model);
+                await _teacherService.EditTeacherAsync(model);   
             }
 
-            return CreatedAtAction("GetTeachersAsync", new {id = model.TeacherId});
+            return NoContent();
         }
 
-        [HttpDelete("action")]
+        [HttpDelete]
+        [Route("api/Teacher/DeleteTeacherAsync/{Id}")]
         public async Task<IActionResult> DeleteTeacherAsync(Guid Id)
         {
             await _teacherService.DeleteTeacherAsync(Id);
-            return CreatedAtAction("GetTeachersAsync", new {id = Id});
+            return NoContent();
+        }
+
+        [HttpGet]
+        [Route("api/Teacher/details/{Id}")]
+        public async Task<JsonResult> GetTeacherByIdAsync(Guid Id)
+        {
+            var teacher = await _teacherService.GetTecherByIdAsync(Id); 
+            return Json(teacher);
         }
     }
 }

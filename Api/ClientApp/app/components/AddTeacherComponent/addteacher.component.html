@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <h3>Nauczyciele</h3>
+        <hr />
+
+        <form [formGroup]="teacherForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+            <input type="hidden" formControlName="teacherid">
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="firstname">Imię:</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" formControlName="firstname">
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'firstname') && formDir.submitted">
+                    Imię jest wymagane!
+                </span>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="lastname">Nazwisko:</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" formControlName="lastname">
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'lastname') && formDir.submitted">
+                    Nazwisko jest wymagane!
+                </span>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="languages">Języki:</label>
+                <div class="col-md-4">
+                    <select class="form-control" formControlName="languages">
+                        <option selected="true" disabled="disabled">---Wybierz Język---</option>
+                        <option value="Angielski">Angielski</option>
+                        <option value="Niemiecki">Niemiecki</option>
+                        <option value="Hiszpanski">Hiszpanski</option>
+                    </select>
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'languages') && formDir.submitted">
+                    Język jest wymagany!
+                </span>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="city">Miasto:</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" formControlName="city">
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'city') && formDir.submitted">
+                    Miasto jest wymagane!
+                </span>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="address">Adres:</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" formControlName="address">
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'address') && formDir.submitted">
+                    Adres jest wymagany!
+                </span>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-2" for="zipcode">Kod pocztowy:</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" formControlName="zipcode">
+                </div>
+                <span class="text-danger" *ngIf="teacherForm.hasError('required', 'zipcode') && formDir.submitted">
+                    Kod pocztowy jest wymagany!
+                </span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Zapisz</button>
+                <button class="btn" (click)="cancel()" type="button">Zamknij</button>
+            </div>
+        </form>
+    </body>
+</html>
