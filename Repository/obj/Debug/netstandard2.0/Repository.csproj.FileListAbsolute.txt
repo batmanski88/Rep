@@ -6,3 +6,11 @@ C:\Users\mlapinski.POLANGLO\Rep\Rep\Repository\obj\Debug\netstandard2.0\Reposito
 C:\Users\mlapinski.POLANGLO\Rep\Rep\Repository\obj\Debug\netstandard2.0\Repository.AssemblyInfo.cs
 C:\Users\mlapinski.POLANGLO\Rep\Rep\Repository\obj\Debug\netstandard2.0\Repository.dll
 C:\Users\mlapinski.POLANGLO\Rep\Rep\Repository\obj\Debug\netstandard2.0\Repository.pdb
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\bin\Debug\netstandard2.0\Repository.deps.json
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\bin\Debug\netstandard2.0\Repository.dll
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\bin\Debug\netstandard2.0\Repository.pdb
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\obj\Debug\netstandard2.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\obj\Debug\netstandard2.0\Repository.AssemblyInfoInputs.cache
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\obj\Debug\netstandard2.0\Repository.AssemblyInfo.cs
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\obj\Debug\netstandard2.0\Repository.dll
+C:\Users\mlapinski\Documents\Projects\Rep\Repository\obj\Debug\netstandard2.0\Repository.pdb

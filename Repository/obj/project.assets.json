@@ -2933,23 +2933,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mlapinski.POLANGLO\\.nuget\\packages\\": {},
+    "C:\\Users\\mlapinski\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mlapinski.POLANGLO\\Rep\\Rep\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\mlapinski\\Documents\\Projects\\Rep\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\mlapinski.POLANGLO\\Rep\\Rep\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\mlapinski.POLANGLO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mlapinski.POLANGLO\\Rep\\Rep\\Repository\\obj\\",
+      "projectPath": "C:\\Users\\mlapinski\\Documents\\Projects\\Rep\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\mlapinski\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mlapinski\\Documents\\Projects\\Rep\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mlapinski.POLANGLO\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mlapinski\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
