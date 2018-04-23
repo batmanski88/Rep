@@ -27,7 +27,7 @@ namespace Api.Services
             }
             else
             {
-                teacher = new Teacher(Guid.NewGuid(), model.FirstName, model.LastName, model.Languages, model.City, model.Address, model.ZipCode);
+                teacher = new Teacher(Guid.NewGuid(), Guid.NewGuid(), model.FirstName, model.LastName, model.Languages, model.City, model.Address, model.ZipCode);
                 await _teacherRepo.AddTeacherAsync(teacher);
             }
         }

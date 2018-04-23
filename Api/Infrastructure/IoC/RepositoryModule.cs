@@ -16,9 +16,14 @@ namespace Api.Infrastructure.IoC
                    .As<ITeacherRepo>()
                    .InstancePerLifetimeScope();
             
-            builder.RegisterType<RepDbContext>()
-                   .As<IRepDbContext>()
+            builder.RegisterType<UserRepo>()
+                   .As<IUserRepo>()
                    .InstancePerLifetimeScope();
+            
+            builder.RegisterType<SchoolRepo>()
+                   .As<ISchoolRepo>()
+                   .InstancePerLifetimeScope();
+           
         }
     }
 }

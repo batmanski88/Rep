@@ -10,6 +10,14 @@ namespace Api.Infrastructure.IoC
             builder.RegisterType<TeacherService>()
                    .As<ITeacherService>()
                    .InstancePerLifetimeScope();
+            
+            builder.RegisterType<Encrypter>()
+                   .As<IEncrypter>()
+                   .InstancePerLifetimeScope();
+            
+            builder.RegisterType<JwtHandler>()
+                   .As<IJwtHandler>()
+                   .InstancePerLifetimeScope();
         }
     }
 }
